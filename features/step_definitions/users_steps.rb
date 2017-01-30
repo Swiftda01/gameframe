@@ -1,4 +1,4 @@
-Then(/^a user should be created$/) do
+Then(/^their account should be created$/) do
   expect(User.last.email).to eq('test@test.com')
 end
 
@@ -16,7 +16,7 @@ Given(/^they have previously registered$/) do
   )
 end
 
-Then(/^a user should be signed in$/) do
+Then(/^they should be signed in$/) do
   expect(page).to have_content("Signed in successfully.")
 end
 
@@ -31,4 +31,8 @@ end
 
 Then(/^they should be signed out$/) do
   expect(page).to have_content("Signed out successfully.")
+end
+
+Then(/^their details should be updated$/) do
+  expect(User.last.email).to eq('new_email_address@test.com')
 end

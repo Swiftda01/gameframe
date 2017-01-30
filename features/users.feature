@@ -8,7 +8,7 @@ Feature: Users
       And they complete the "user_password" field with "password"
       And they complete the "user_password_confirmation" field with "password"
       And they click on "Sign up"
-    Then a user should be created
+    Then their account should be created
 
   @selenium
   Scenario: An underage user attempts to register for an account
@@ -24,7 +24,7 @@ Feature: Users
     When they complete the "user_email" field with "test@test.com"
       And they complete the "user_password" field with "password"
       And they click on "Log in"
-    Then a user should be signed in
+    Then they should be signed in
 
   @selenium
   Scenario: A user signs out
@@ -32,3 +32,15 @@ Feature: Users
       And they have previously signed in
     When they click on "Sign out"
     Then they should be signed out
+
+  @selenium
+  Scenario: A user edits their details
+    Given they have previously registered
+      And they have previously signed in
+      And they have navigated to "/users/edit"
+    When they complete the "user_email" field with "new_email_address@test.com"
+      And they complete the "user_current_password" field with "password"
+      And they click on "Update"
+
+    Then their details should be updated
+
