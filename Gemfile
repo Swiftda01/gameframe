@@ -41,6 +41,8 @@ gem 'devise'
 group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'tsuite'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver', '< 3.0'
 end
 
 group :development, :test do

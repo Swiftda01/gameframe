@@ -4,10 +4,18 @@ Feature: Users
   Scenario: A user registers for an account
     Given they have navigated to "/users/sign_up"
     When they complete the "user_email" field with "test@test.com"
+      And they complete the "user_date_of_birth" field with "20/11/1970"
       And they complete the "user_password" field with "password"
       And they complete the "user_password_confirmation" field with "password"
       And they click on "Sign up"
     Then a user should be created
+
+  @selenium
+  Scenario: An underage user attempts to register for an account
+    Given they have navigated to "/users/sign_up"
+    When they complete the "user_date_of_birth" field with an unpermitted date of birth
+      And they click on "Sign up"
+    Then They fail validation and are made aware of the reason why
 
   @selenium
   Scenario: A user signs in
