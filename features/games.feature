@@ -21,6 +21,7 @@ Feature: Games
     Given they are signed in as an admin
       And they have navigated to "/games"
     Then they should see "Game Listings"
+      And they should see a table containing a list of games
 
   @wip
   @selenium

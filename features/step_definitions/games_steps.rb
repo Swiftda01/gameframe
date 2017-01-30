@@ -17,3 +17,7 @@ end
 Then(/^the game should be deleted$/) do
   expect(Game.all.count).to eq(3)
 end
+
+Then(/^they should see a table containing a list of games$/) do
+  expect(page).to have_selector('tr.game_listing', count: 3)
+end
