@@ -29,13 +29,8 @@
 </p>
 
 <p>
-  <strong>Release date:</strong>
+  <strong>Release Date:</strong>
   <%= @game.release_date %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
 </p>
 
 <p>
@@ -44,13 +39,18 @@
 </p>
 
 <p>
-  <strong>Multiplayer format:</strong>
+  <strong>Multiplayer Format:</strong>
   <%= @game.multiplayer_format %>
 </p>
 
 <p>
   <strong>Coop:</strong>
   <%= @game.coop %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @game.price %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |

@@ -1,5 +1,6 @@
 Feature: Users
   
+  @wip
   @selenium
   Scenario: A user registers for an account
     Given they have navigated to "/users/sign_up"
@@ -10,6 +11,7 @@ Feature: Users
       And they click on "Sign up"
     Then their account should be created
 
+  @wip
   @selenium
   Scenario: An underage user attempts to register for an account
     Given they have navigated to "/users/sign_up"
@@ -17,6 +19,7 @@ Feature: Users
       And they click on "Sign up"
     Then They fail validation and are made aware of the reason why
 
+  @wip
   @selenium
   Scenario: A user signs in
     Given they have navigated to "/users/sign_in"
@@ -26,6 +29,7 @@ Feature: Users
       And they click on "Log in"
     Then they should be signed in
 
+  @wip
   @selenium
   Scenario: A user signs out
     Given they have previously registered
@@ -33,6 +37,7 @@ Feature: Users
     When they click on "Sign out"
     Then they should be signed out
 
+  @wip
   @selenium
   Scenario: A user edits their details
     Given they have previously registered
@@ -41,6 +46,5 @@ Feature: Users
     When they complete the "user_email" field with "new_email_address@test.com"
       And they complete the "user_current_password" field with "password"
       And they click on "Update"
-
     Then their details should be updated
 

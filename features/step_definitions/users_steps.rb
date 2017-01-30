@@ -29,6 +29,11 @@ Given(/^they have previously signed in$/) do
   }
 end
 
+When(/^they are signed in as an admin$/) do
+  admin = User.find_by(email: "admin@email.com")
+  log_on_as(admin.email)
+end
+
 Then(/^they should be signed out$/) do
   expect(page).to have_content("Signed out successfully.")
 end
