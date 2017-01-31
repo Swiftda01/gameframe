@@ -1,6 +1,10 @@
 require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter '/users'
+  add_filter '/mailers'
+  add_filter '/jobs'
+  add_filter '/channels'
+
 end
 
 require 'cucumber/rails'

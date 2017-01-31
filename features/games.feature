@@ -3,7 +3,6 @@ Feature: Games
   Background:
     Given sample data is loaded
 
-  @wip
   @selenium
   Scenario: An user can view a game's details
     Given they have navigated to a game's show page
@@ -15,7 +14,6 @@ Feature: Games
       And they should see "Coop"
       And they should see "Price"
 
-  @wip
   @selenium
   Scenario: A admin can view a list of all games
     Given they are signed in as an admin
@@ -23,7 +21,6 @@ Feature: Games
     Then they should see "Game Listings"
       And they should see a table containing a list of games
 
-  @wip
   @selenium
   Scenario: An admin can add a game
     Given they are signed in as an admin
@@ -31,8 +28,7 @@ Feature: Games
     When they complete the "game_title" field with "Test Game"
       And they click on "Create Game"
     Then the game should be created
-
-  @wip 
+ 
   @selenium
   Scenario: An admin can edit a game's details
     Given they are signed in as an admin
@@ -41,7 +37,6 @@ Feature: Games
       And they click on "Update Game"
     Then the game should be updated
 
-  @wip
   @selenium
   Scenario: An admin can delete a game
     Given they are signed in as an admin
