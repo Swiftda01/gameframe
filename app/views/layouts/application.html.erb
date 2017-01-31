@@ -10,23 +10,32 @@
   <body class="<%= controller.controller_name %>">
     <div class="container">
       <header>
-        <ul>
-          <% if current_user %>
-            <li>
-              <%= link_to "My Account", edit_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Register", new_user_registration_path %>
-            </li>   
-            <li>
-              <%= link_to "Log In", new_user_session_path %>
-            </li>
-          <% end %>    
-        </ul>
+        <div class="row">
+          <div class="col-md-3">
+            <span class="logo"><%= link_to "Gameframe", root_path %></span>
+          </div>
+          <div class="col-md-9">
+            <nav>
+              <ul>
+                <% if current_user %>
+                  <li>
+                    <%= link_to "My Account", edit_user_registration_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to "Register", new_user_registration_path %>
+                  </li>   
+                  <li>
+                    <%= link_to "Log In", new_user_session_path %>
+                  </li>
+                <% end %>    
+              </ul>
+            </nav>
+          </div>
+        </div>
       </header>
       <main>
         <div class="row">

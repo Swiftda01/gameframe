@@ -3,8 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-  img {
-    height: 250px;
-    width: 200px;
+  .game-listing {
+    img {
+      width: 100%;
+    }
+    .game-title {
+      font: {
+        size: 1.2em;
+      }
+    }
+    p {
+      padding: 5px 0;
+    }
+  padding: 10px;
   }
 }

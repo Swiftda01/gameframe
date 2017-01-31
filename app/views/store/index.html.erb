@@ -1,12 +1,30 @@
 <div class="row">
   <div class="col-md-12">
     <ul>
-    <% @games.each do |game| %>
-      <li>
-      <%= game.title %>
-      <%#= image_tag "#{game.image1}" %>
-      </li>
-    <% end %>
+      <% cache @games do %>
+        <% @games.each do |game| %>
+          <% cache game do %>
+            <li>
+              <div id="game<%= game.id %>" class="game-listing row">
+                <div class="col-md-2">
+                  <%= image_tag "#{game.image1}" %>
+                </div>
+                <div class="col-md-10">
+                  <span class="game-title">
+                    <%= link_to "#{game.title}", game_path(game) %>
+                  </span>
+                  <p><%= game.description %></p>
+                  <div class="purchase-infomation">
+                    <span class="price">
+                      <%= number_to_currency(game.price, :unit => "£") %>  
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>

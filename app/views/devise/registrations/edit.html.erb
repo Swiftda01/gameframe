@@ -4,12 +4,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :date_of_birth, "Date of Birth:" %><br />
+    <%= f.label :date_of_birth, "Date of Birth:" %>
     <%= f.date_field :date_of_birth, autofocus: true %>
   </div>
 
@@ -21,13 +21,13 @@
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
-      <br />
+      
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 

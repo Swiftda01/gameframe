@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
   def index
-    @games = Game.all
+    @games = Game.order("release_date DESC")
   end
 end

@@ -19,25 +19,17 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render :new }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+      @game.save
+      format.html { redirect_to @game, notice: 'Game was successfully created.' }
+      format.json { render :show, status: :created, location: @game }
     end
   end
 
   def update
     respond_to do |format|
-      if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { render :show, status: :ok, location: @game }
-      else
-        format.html { render :edit }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+      @game.update(game_params)
+      format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+      format.json { render :show, status: :ok, location: @game }
     end
   end
 
