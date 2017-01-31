@@ -15,9 +15,13 @@ Then(/^the game should be updated$/) do
 end
 
 Then(/^the game should be deleted$/) do
-  expect(Game.all.count).to eq(3)
+  expect(Game.all.count).to eq(2)
 end
 
 Then(/^they should see a table containing a list of games$/) do
   expect(page).to have_selector('tr.game_listing', count: 3)
+end
+
+Given(/^a game has previously been added to a cart$/) do
+
 end

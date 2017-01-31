@@ -1,5 +1,5 @@
 Feature: Users
-  
+    
   @selenium
   Scenario: A user registers for an account
     Given they have navigated to "/users/sign_up"
@@ -9,14 +9,14 @@ Feature: Users
       And they complete the "user_password_confirmation" field with "password"
       And they click on "Sign up"
     Then their account should be created
-
+  
   @selenium
   Scenario: An underage user attempts to register for an account
     Given they have navigated to "/users/sign_up"
     When they complete the "user_date_of_birth" field with an unpermitted date of birth
       And they click on "Sign up"
-    Then They fail validation and are made aware of the reason why
-
+    Then validation is failed and they are advised "You must be at least 16 years old to use this service"
+  
   @selenium
   Scenario: A user signs in
     Given they have navigated to "/users/sign_in"
@@ -25,14 +25,14 @@ Feature: Users
       And they complete the "user_password" field with "password"
       And they click on "Log in"
     Then they should be signed in
-
+  
   @selenium
   Scenario: A user signs out
     Given they have previously registered
       And they have previously signed in
     When they click on "Sign out"
     Then they should be signed out
-
+  
   @selenium
   Scenario: A user edits their details
     Given they have previously registered

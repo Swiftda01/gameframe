@@ -19,17 +19,25 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     respond_to do |format|
-      @game.save
-      format.html { redirect_to @game, notice: 'Game was successfully created.' }
-      format.json { render :show, status: :created, location: @game }
+      if @game.save
+        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.json { render :show, status: :created, location: @game }
+      else
+        format.html { render :edit }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def update
     respond_to do |format|
-      @game.update(game_params)
-      format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-      format.json { render :show, status: :ok, location: @game }
+      if @game.update(game_params)
+        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.json { render :show, status: :ok, location: @game }
+      else
+        format.html { render :edit }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -43,12 +51,12 @@ class GamesController < ApplicationController
 
   private
 
-    def set_game
-      @game = Game.find(params[:id])
-    end
+  def set_game
+    @game = Game.find(params[:id])
+  end
 
 
-    def game_params
-      params.require(:game).permit(:title, :description, :image1, :image2, :image3, :image4, :release_date, :price, :players, :multiplayer_format, :coop)
-    end
+  def game_params
+    params.require(:game).permit(:title, :description, :image1, :image2, :image3, :image4, :release_date, :price, :players, :multiplayer_format, :coop)
+  end
 end

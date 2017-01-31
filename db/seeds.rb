@@ -9,7 +9,7 @@ module SeedData
         User.create(email: "admin@email.com", date_of_birth: "01/01/1980", password: "123456", password_confirmation: "123456")
       end
 
-      ActiveRecord::Base.connection.execute("TRUNCATE games")
+      Game.destroy_all
 
       Game.create!({
         title: "Final Fantasy XV",

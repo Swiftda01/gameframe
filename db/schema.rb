@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130173733) do
+ActiveRecord::Schema.define(version: 20170131172028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_games", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_games_on_cart_id", using: :btree
+    t.index ["game_id"], name: "index_cart_games_on_game_id", using: :btree
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -49,4 +63,6 @@ ActiveRecord::Schema.define(version: 20170130173733) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "cart_games", "carts"
+  add_foreign_key "cart_games", "games"
 end

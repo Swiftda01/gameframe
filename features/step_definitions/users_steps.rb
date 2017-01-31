@@ -6,10 +6,6 @@ When(/^they complete the "([^"]*)" field with an unpermitted date of birth$/) do
   fill_in field, with: "#{Date.today - (16.years - 1.day)}"
 end
 
-Then(/^They fail validation and are made aware of the reason why$/) do
-  expect(page.body).to match("Date of birth - You must be at least 16 years old to use this service")
-end
-
 Given(/^they have previously registered$/) do
   @user = User.create!(
     { email: "test@test.com", date_of_birth: "20/11/1970", password: "password", password_confirmation: "password" }
