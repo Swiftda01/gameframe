@@ -61,14 +61,5 @@ Feature: Games
       And they have navigated to a game's edit page
     When they click on "Delete Game"
     Then the game should be deleted
-  
-  @wip
-  @selenium
-  Scenario: An admin gets an error message when they attempt to delete a game which is referenced by a cart
-    Given they are signed in as an admin
-      And a game has previously been added to a cart
-      And they have navigated to a game's edit page
-    When they click on "Delete Game"
-    Then they should see "Unable to delete game as it is currently referenced by a cart"
 
 

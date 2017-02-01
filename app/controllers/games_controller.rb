@@ -43,7 +43,6 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
-
   def game_params
     params.require(:game).permit(:title, :description, :image1, :image2, :image3, :image4, :release_date, :price, :players, :multiplayer_format, :coop)
   end
