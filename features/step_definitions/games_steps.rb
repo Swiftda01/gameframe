@@ -21,7 +21,3 @@ end
 Then(/^they should see a table containing a list of games$/) do
   expect(page).to have_selector('tr.game_listing', count: 3)
 end
-
-Given(/^a game has previously been added to a cart$/) do
-
-end

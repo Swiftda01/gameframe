@@ -3,15 +3,14 @@ class CartGamesController < ApplicationController
   before_action :set_cart, only: [:create]
   before_action :set_cart_game, only: [:show, :edit, :update, :destroy]
 
+  def show
+  end
+
   def create
     game = Game.find(params[:game_id])
-    @cart_game = @cart.cart_games.build(game: game)
+    @cart_game = @cart.add_item(game)
     @cart_game.save
-    respond_to do |format|
-      format.html { redirect_to @cart_game.cart,
-      notice: "Item was successfully added to your cart" }
-      format.json { render :show, status: :created, location: @cart_game }
-    end
+    redirect_to @cart_game.cart, notice: "Item was successfully added to your cart"
   end
 
   private

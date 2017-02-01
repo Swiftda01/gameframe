@@ -1,6 +1,6 @@
 <h2>Your Cart</h2>
 <ul>
   <% @cart.cart_games.each do |item| %>
-    <li><%= item.game.title %></li>
+    <li><%= item.quantity %> &times; <%= item.game.title %></li>
   <% end %>
 </ul>
