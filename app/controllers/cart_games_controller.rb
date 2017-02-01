@@ -10,7 +10,7 @@ class CartGamesController < ApplicationController
     game = Game.find(params[:game_id])
     @cart_game = @cart.add_item(game)
     @cart_game.save
-    redirect_to @cart_game.cart, notice: "Item was successfully added to your cart"
+    redirect_to @cart_game.cart
   end
 
   private
