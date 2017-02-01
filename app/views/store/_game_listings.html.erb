@@ -1,0 +1,24 @@
+<% @games.each do |game| %>
+  <% cache game do %>
+    <li>
+      <div id="game<%= game.id %>" class="game-listing row">
+        <div class="col-md-2">
+          <%= image_tag "#{game.image1}" %>
+        </div>
+        <div class="col-md-10">
+          <span class="game-title">
+            <%= link_to "#{game.title}", game_path(game) %>
+          </span>
+          <p><%= game.description %></p>
+          <div class="purchase-infomation">
+            <span class="price">
+              <%= number_to_currency(game.price, :unit => "£") %>
+              <%= button_to 'Add to Cart', cart_games_path(game_id: game),
+                remote: true %>  
+            </span>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>

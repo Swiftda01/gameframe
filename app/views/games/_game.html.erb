@@ -1,0 +1,9 @@
+<tr class="game_listing">
+  <td><%= game.title %></td>
+  <td><%= game.release_date %></td>
+  <td><%= game.players %></td>
+  <td><%= game.price %></td>
+  <td><%= link_to 'Show', game %></td>
+  <td><%= link_to 'Edit', edit_game_path(game) %></td>
+  <td><%= link_to 'Destroy', game, method: :delete %></td>
+</tr>

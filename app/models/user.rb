@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validate :varify_age
 
   private
+  
   def varify_age
     unless self.date_of_birth.nil?
       if (self.date_of_birth.to_date + 16.years) > Date.today

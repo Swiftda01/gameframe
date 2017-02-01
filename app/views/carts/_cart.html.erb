@@ -1,0 +1,5 @@
+<h2>Your Cart</h2>
+<ul>
+  <%= render(cart.cart_games) %>
+</ul>
+<%= button_to 'Empty cart', @cart, method: :delete %>
