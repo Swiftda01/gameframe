@@ -1,0 +1,58 @@
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %>
+      prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, "Last Name" %>
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_line1, "Address Line 1" %>
+    <%= f.text_field :address_line1, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_line2, "Address Line 2" %>
+    <%= f.text_field :address_line2, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_line3, "Address Line 3" %>
+    <%= f.text_field :address_line3, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :town_city, "Town or City" %>
+    <%= f.text_field :town_city, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :county, "County" %>
+    <%= f.text_field :county, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postcode, "Postcode" %>
+    <%= f.text_field :postcode, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Place Order' %>
+  </div>
+<% end %>

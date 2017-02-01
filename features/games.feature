@@ -37,7 +37,7 @@ Feature: Games
     When they complete the "game_title" field with "Test Game"
       And they complete the "game_price" field with "0"
       And they click on "Create Game"
-    Then validation is failed and they are advised "Price must be greater than or equal to 0.01"
+    Then they should see "Price must be greater than or equal to 0.01"
   
   @selenium
   Scenario: An admin edits a game's details
@@ -53,7 +53,7 @@ Feature: Games
       And they have navigated to a game's edit page
     When they complete the "game_price" field with "0"
       And they click on "Update Game"
-    Then validation is failed and they are advised "Price must be greater than or equal to 0.01"
+    Then they should see "Price must be greater than or equal to 0.01"
   
   @selenium
   Scenario: An admin deletes a game
@@ -69,6 +69,6 @@ Feature: Games
       And a game has previously been added to a cart
       And they have navigated to a game's edit page
     When they click on "Delete Game"
-    Then validation is failed and they are advised "Unable to delete game as it is currently referenced by a cart"
+    Then they should see "Unable to delete game as it is currently referenced by a cart"
 
 

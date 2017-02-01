@@ -18,7 +18,3 @@ end
 Then(/^they should see "([^"]*)"$/) do |content|
   page.should have_content(content)
 end
-
-Then(/^validation is failed and they are advised "([^"]*)"$/) do |notice|
-  expect(page.body).to match(notice)
-end

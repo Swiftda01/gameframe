@@ -1,5 +1,5 @@
 Then(/^their account should be created$/) do
-  expect(User.last.email).to eq('test@test.com')
+  expect(User.count).to eq(1)
 end
 
 When(/^they complete the "([^"]*)" field with an unpermitted date of birth$/) do |field|

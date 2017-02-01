@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201163130) do
+ActiveRecord::Schema.define(version: 20170201164442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20170201163130) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "quantity",   default: 1
+    t.integer  "order_id"
     t.index ["cart_id"], name: "index_cart_games_on_cart_id", using: :btree
     t.index ["game_id"], name: "index_cart_games_on_game_id", using: :btree
+    t.index ["order_id"], name: "index_cart_games_on_order_id", using: :btree
   end
 
   create_table "carts", force: :cascade do |t|
@@ -44,6 +46,19 @@ ActiveRecord::Schema.define(version: 20170201163130) do
     t.boolean  "coop"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "address_line3"
+    t.string   "town_city"
+    t.string   "county"
+    t.string   "postcode"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +89,5 @@ ActiveRecord::Schema.define(version: 20170201163130) do
 
   add_foreign_key "cart_games", "carts"
   add_foreign_key "cart_games", "games"
+  add_foreign_key "cart_games", "orders"
 end

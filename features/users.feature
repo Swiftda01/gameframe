@@ -15,7 +15,7 @@ Feature: Users
     Given they have navigated to "/users/sign_up"
     When they complete the "user_date_of_birth" field with an unpermitted date of birth
       And they click on "Sign up"
-    Then validation is failed and they are advised "You must be at least 16 years old to use this service"
+    Then they should see "You must be at least 16 years old to use this service"
   
   @selenium
   Scenario: A user signs in
