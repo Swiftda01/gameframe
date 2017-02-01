@@ -2,6 +2,8 @@ Feature: Orders
 
   Background:
     Given sample data is loaded
+      And they have previously registered
+      And they have previously signed in
 
   @selenium
   Scenario: A user places an order

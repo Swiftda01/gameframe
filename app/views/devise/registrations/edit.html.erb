@@ -10,47 +10,47 @@
 
   <div class="field">
     <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
     <%= f.label :last_name, "Last Name" %>
-    <%= f.text_field :last_name, autofocus: true %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
     <%= f.label :address_line1, "Address Line 1" %>
-    <%= f.text_field :address_line1, autofocus: true %>
+    <%= f.text_field :address_line1 %>
   </div>
 
   <div class="field">
     <%= f.label :address_line2, "Address Line 2" %>
-    <%= f.text_field :address_line2, autofocus: true %>
+    <%= f.text_field :address_line2 %>
   </div>
 
   <div class="field">
     <%= f.label :address_line3, "Address Line 3" %>
-    <%= f.text_field :address_line3, autofocus: true %>
+    <%= f.text_field :address_line3 %>
   </div>
 
   <div class="field">
     <%= f.label :town_city, "Town or City" %>
-    <%= f.text_field :town_city, autofocus: true %>
+    <%= f.text_field :town_city %>
   </div>
 
   <div class="field">
     <%= f.label :county, "County" %>
-    <%= f.text_field :county, autofocus: true %>
+    <%= f.text_field :county %>
   </div>
 
   <div class="field">
     <%= f.label :postcode, "Postcode" %>
-    <%= f.text_field :postcode, autofocus: true %>
+    <%= f.text_field :postcode %>
   </div>
 
   <div class="field">
     <%= f.label :date_of_birth, "Date of Birth:" %>
-    <%= f.date_field :date_of_birth, autofocus: true %>
+    <%= f.date_field :date_of_birth %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

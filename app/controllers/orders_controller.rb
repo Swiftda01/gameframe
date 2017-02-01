@@ -3,9 +3,6 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_that_cart_contains_items, only: [:new]
 
-  def show
-  end
-
   def new
     @order = Order.new
   end
