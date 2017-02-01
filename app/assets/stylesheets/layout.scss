@@ -1,12 +1,38 @@
-
-
 header {
   color: white;
   background-color: #DEEFF5;
-  nav {
-    li {
-      display: inline-block;
+  .logo {
+    letter-spacing: 1.5px;
+    padding: 10px;
+    line-height: 50px;
+    font: {
+      size: 3rem;
+      family: 'Russo One', sans-serif;
     }
-    text-align: right;
   }
+  nav {
+    padding: 10px;
+    letter-spacing: 0.5px;
+    font : {
+      size: 1.6rem;
+    }
+    position: relative;
+    top: 3px;
+    ul {
+      text-align: right;
+      li {
+        padding: 0 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.notices {
+  text-align: center;
+  font: {
+    size: 2rem;
+  }
+  letter-spacing: 1px;
+  background-color: yellow;
 }
