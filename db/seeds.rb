@@ -6,7 +6,7 @@ module SeedData
     object.instance_exec do
 
       unless User.find_by(email: "admin@email.com")
-        User.create(email: "admin@email.com", date_of_birth: "01/01/1980", password: "123456", password_confirmation: "123456")
+        User.create(email: "admin@email.com", date_of_birth: "01/01/1980", password: "123456", password_confirmation: "123456", is_admin: true)
       end
 
       Game.destroy_all
@@ -21,6 +21,7 @@ module SeedData
           for a limited time, and perform context-based actions such as taking cover 
           behind objects.},
         image1: "final_fantasy_xv.jpg",
+        image2: "final_fantasy_xv_2.jpg",
         release_date: "29/11/2016",
         price: 40,
         players: 1
@@ -33,6 +34,7 @@ module SeedData
           sections, while using improvised weapons and gadgets in order to progress 
           through the story.},
         image1: "rise_of_the_tomb_raider.jpg",
+        image2: "rise_of_the_tomb_raider_2.jpg",
         release_date: "13/11/2015",
         price: 30,
         players: 1
@@ -45,6 +47,7 @@ module SeedData
           this mountain, the ultimate destination of the game, is subdivided into 
           several sections traveled through linearly.},
         image1: "journey.jpg",
+        image2: "journey_2.jpg",
         release_date: "14/12/2012",
         price: 12,
         players: 1

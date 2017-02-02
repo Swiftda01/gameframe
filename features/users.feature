@@ -43,3 +43,8 @@ Feature: Users
       And they click on "Update"
     Then their details should be updated
 
+  @selenium
+  Scenario: An unauthorised user attempts to access an admin-only page
+    Given they have navigated to "/games"
+    Then they should see "You are not authorised to view this page"
+

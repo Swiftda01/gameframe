@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
+  include Admin
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :authorise_admin, only: [:index, :new, :edit, :create, :update, :destroy]
 
   def index
     @games = Game.all
