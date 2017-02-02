@@ -1,6 +1,27 @@
 @import 'base';
 
 .store {
+  .search {
+    background-color: $gray;
+    height: 57px;
+    text-align: center;
+    color: $white;
+    label {
+      letter-spacing: 1px;
+    }
+    input {
+      color: $gray;
+    }
+    label, input {
+      display: inline-block;
+      font-size: 1.8rem;
+      position: relative;
+      top: 12px;
+    }
+    .btn-primary {
+      background-color: $medium-blue;
+    }
+  }
   .game-listing {
     padding: 10px;
     img {
@@ -31,6 +52,6 @@
     }
   }
   .carousel-inner {
-    height: 500px;
+    height: 400px;
   }
 }

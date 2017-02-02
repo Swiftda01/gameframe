@@ -1,4 +1,11 @@
 <%= render 'carousel' %>
+<div class="row search">
+  <%= form_tag("/store/index", method: "get") do %>
+    <%= label_tag(:name_search, "Search by name:") %>
+    <%= text_field_tag(:name_search) %>
+    <%= submit_tag("Submit", class: "btn-primary") %>
+  <% end %>
+</div>
 <div class="row">
   <div class="col-md-12">
     <ul>
