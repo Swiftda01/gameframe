@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_items_from_cart(@cart)
+    @order.update(user_id: current_user.id)
     if @order.save
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
@@ -26,6 +27,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:first_name, :last_name, :address_line1, :address_line2, :address_line3, :town_city, :county, :postcode)
+    params.require(:order).permit(:first_name, :last_name, :address_line1, :address_line2, :address_line3, :town_city, :county, :postcode, :user_id)
   end
 end
