@@ -14,7 +14,7 @@
             <span class="price">
               <%= number_to_currency(game.price, :unit => "£") %>
               <%= button_to 'Add to Cart', cart_games_path(game_id: game),
-                remote: true %>  
+                class: "btn-primary", remote: true %>  
             </span>
           </div>
         </div>

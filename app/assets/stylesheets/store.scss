@@ -1,9 +1,8 @@
-// Place all the styles related to the Store controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base';
 
 .store {
   .game-listing {
+    padding: 10px;
     img {
       width: 100%;
     }
@@ -15,7 +14,16 @@
     p {
       padding: 5px 0;
     }
-  padding: 10px;
+    .btn-primary {
+      background-color: $medium-blue;
+      color: $gray;
+      border: 1px solid $dark-blue;
+      padding: 5px 10px;
+      &:hover {
+        background-color: $deep-blue;
+        color: $gray;
+      }
+    }
   }
   #myCarousel {
     img {
