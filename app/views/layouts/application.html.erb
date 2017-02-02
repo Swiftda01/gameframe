@@ -2,40 +2,38 @@
 <html>
   <head>
     <title>Gameframe</title>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   </head>
 
   <body class="<%= controller.controller_name %>">
     <div class="container-fluid">
-      <header>
-        <div class="row">
-          <div class="col-md-3">
-            <span class="logo"><%= link_to "Gameframe", root_path %></span>
-          </div>
-          <div class="col-md-9">
-            <nav>
-              <ul>
-                <% if current_user %>
-                  <li>
-                    <%= link_to "Account", edit_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-                  </li>
-                <% else %>
-                  <li>
-                    <%= link_to "Register", new_user_registration_path %>
-                  </li>   
-                  <li>
-                    <%= link_to "Log In", new_user_session_path %>
-                  </li>
-                <% end %>    
-              </ul>
-            </nav>
-          </div>
+      <header class="row">
+        <div class="col-md-3">
+          <span class="logo"><%= link_to "Gameframe", root_path %></span>
+        </div>
+        <div class="col-md-9">
+          <nav>
+            <ul>
+              <% if current_user %>
+                <li>
+                  <%= link_to "Account", edit_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to "Register", new_user_registration_path %>
+                </li>   
+                <li>
+                  <%= link_to "Log In", new_user_session_path %>
+                </li>
+              <% end %>    
+            </ul>
+          </nav>
         </div>
       </header>
       <main>

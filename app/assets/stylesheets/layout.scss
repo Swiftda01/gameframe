@@ -1,13 +1,18 @@
+@import 'base';
+
 header {
-  color: white;
-  background-color: #DEEFF5;
+  background-color: $gray;
   .logo {
-    letter-spacing: 1.5px;
+    letter-spacing: 6px;
     padding: 10px;
     line-height: 50px;
+    color: $white;
     font: {
       size: 3rem;
       family: 'Russo One', sans-serif;
+    }
+    a {
+      color: $white;
     }
   }
   nav {
@@ -21,8 +26,14 @@ header {
     ul {
       text-align: right;
       li {
-        padding: 0 10px;
+        padding: 0 15px 0 8px;
         display: inline-block;
+        &:not(:last-child) {
+          border-right: 1px solid white;
+        }
+        a {
+          color: $white;
+        }
       }
     }
   }
@@ -34,5 +45,5 @@ header {
     size: 2rem;
   }
   letter-spacing: 1px;
-  background-color: yellow;
+  background-color: #BBD9EE;
 }

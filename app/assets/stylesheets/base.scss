@@ -1,5 +1,9 @@
 @import 'colors';
 
+body {
+  background-color: $light-blue;
+}
+
 p {
   margin: 0;
 }
@@ -17,9 +21,13 @@ li {
 }
 
 a {
-  color: black;
+  color: $gray;
   &:hover {
-    color: blue;
     text-decoration: none;
+    color: $deep-blue;
   }
+}
+
+.container-fluid {
+  padding: 0;
 }
