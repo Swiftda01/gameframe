@@ -1,3 +1,28 @@
-// Place all the styles related to the Carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base';
+
+.carts {
+  .shopping-cart {
+    margin: 6rem 0;
+  }
+  .well {
+    width: 350px;
+    background-color: $medium-blue;
+    border: 1px solid $white;
+    display: inline-block;
+    font-size: 1.5rem;
+    h2 {
+      font-size: 2.2rem;
+    }
+    td {
+      padding: 10px 5px 10px 10px;
+    }
+    form {
+      padding: 10px 0;
+      display: inline-block;
+    }
+    table {
+      position: relative;
+      left: 50px;
+    }
+  }
+}

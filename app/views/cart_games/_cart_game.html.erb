@@ -1,1 +1,6 @@
-<li><%= cart_game.quantity %> &times; <%= cart_game.game.title %></li>
+<tr>
+  <td><%= cart_game.quantity %></td>
+  <td>&times;</td>
+  <td><%= cart_game.game.title %></td>
+  <td><%= number_to_currency((cart_game.game.price * cart_game.quantity), :unit => "£") %></td>
+</tr>

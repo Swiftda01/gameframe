@@ -36,6 +36,10 @@ a {
   padding: 0;
 }
 
+.align-left {
+  text-align: left;
+}
+
 .align-center {
   text-align: center;
 }
@@ -51,4 +55,17 @@ a {
   li {
     color: $dark-red;
   }
+}
+
+.btn-success {
+  background-color: $green;
+  border: 2px solid $dark-green;
+}
+
+.btn-danger {
+  border: 2px solid $dark-red;
+}
+
+.well {
+  display: inline-block;
 }
