@@ -1,0 +1,44 @@
+@import 'base';
+
+.form {
+  margin: 6rem 0;
+  .well {
+    width: 400px;
+    background-color: $medium-blue;
+    border: 1px solid $white;
+    display: inline-block;
+    h2 {
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background-color: $dark-blue;
+      border: 2px solid $darkest-blue;
+    }
+    .btn-danger {
+      border: 2px solid $dark-red;
+    }
+    input {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .sub-form {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .edit {
+    width: 700px;
+    h2 {
+      margin-bottom: 10px;
+    }
+    input {
+      margin-right: 28px;
+    }
+  }
+}
