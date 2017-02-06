@@ -1,11 +1,12 @@
 @import 'base';
 
 .carts {
+  background-image: url(asset_path('/assets/retro_wallpaper'));
   .shopping-cart {
     margin: 6rem 0;
   }
   .well {
-    width: 350px;
+    width: 460px;
     background-color: $medium-blue;
     border: 1px solid $white;
     display: inline-block;
@@ -21,8 +22,12 @@
       display: inline-block;
     }
     table {
+      text-align: right;
       position: relative;
       left: 50px;
+      .cart-game-title {
+        max-width: 180px;
+      }
     }
   }
 }

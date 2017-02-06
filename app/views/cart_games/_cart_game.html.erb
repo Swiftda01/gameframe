@@ -1,6 +1,6 @@
 <tr>
   <td><%= cart_game.quantity %></td>
   <td>&times;</td>
-  <td><%= cart_game.game.title %></td>
+  <td class="cart-game-title"><%= cart_game.game.title %></td>
   <td><%= number_to_currency((cart_game.game.price * cart_game.quantity), :unit => "£") %></td>
 </tr>

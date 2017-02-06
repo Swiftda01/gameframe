@@ -5,8 +5,8 @@
       <table>
         <%= render (cart.cart_games) %>
         <tr>
-          <td colspan="3" class="align-right">Total</td>
-          <td><%= number_to_currency(cart.total_price, :unit => "£") %></td>
+          <td colspan="3">Total</td>
+          <td colspan="2"><%= number_to_currency(cart.total_price, :unit => "£") %></td>
         </tr>
       </table>
       <%= button_to "Empty cart", @cart, method: :delete, class: "btn-danger" %>
