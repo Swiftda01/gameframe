@@ -53,5 +53,7 @@
   <%= @game.price %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<% if current_user.is_admin %>
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+<% end %>
 <%= link_to 'Back', games_path %>
