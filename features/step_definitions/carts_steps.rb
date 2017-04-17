@@ -20,3 +20,7 @@ end
 Then(/^their cart will be emptied$/) do
   expect(Cart.count).to eq(0)
 end
+
+Then(/^the item will be deleted from their cart$/) do
+  expect(CartGame.count).to eq(0)
+end

@@ -21,3 +21,9 @@ Feature: Carts
     Given they have previously added a game to their cart
     When they click on "Empty cart"
     Then their cart will be emptied
+
+  @selenium
+  Scenario: A user deletes an item from their cart
+    Given they have previously added a game to their cart
+    When they click on "x"
+    Then the item will be deleted from their cart
