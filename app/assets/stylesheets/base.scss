@@ -66,10 +66,12 @@ a {
   border: 2px solid $dark-red;
 }
 
-.btn-delete {
-  font-size: 1.2rem;
-  padding: 1px 4px;
-  border-radius: 50%;
+.delete {
+  font-weight: bold;
+  color: $dark-red;
+  &:hover {
+    color: $dark-red;
+  }
 }
 
 .well {

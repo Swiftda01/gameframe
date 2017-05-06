@@ -1,7 +1,7 @@
-<tr>
+<tr id="item<%= cart_game.id %>">
   <td><%= cart_game.quantity %></td>
   <td>&times;</td>
   <td class="cart-game-title"><%= cart_game.game.title %></td>
   <td><%= number_to_currency((cart_game.game.price * cart_game.quantity), :unit => "£") %></td>
-  <td><%= link_to 'x', cart_game, method: :delete, class: "btn-danger btn-delete" %></td>
+  <td><%= link_to 'x', cart_game, method: :delete, class: "delete" %></td>
 </tr>

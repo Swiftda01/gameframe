@@ -23,7 +23,16 @@ Feature: Carts
     Then their cart will be emptied
 
   @selenium
-  Scenario: A user deletes an item from their cart
+  Scenario: A user deletes the only item in their cart
     Given they have previously added a game to their cart
-    When they click on "x"
-    Then the item will be deleted from their cart
+    When they click on the delete button
+    Then their cart will be emptied
+      And they will be redirected to the store index
+
+  @selenium
+  Scenario: A user deletes an item in their cart whilst other items remain
+    Given they have previously added a game to their cart
+      And they add a different game to their cart
+    When they click on the delete button
+    Then one of the items will be deleted from their cart
+      And they will be redirected back to the cart
