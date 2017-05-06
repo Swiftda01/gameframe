@@ -13,13 +13,13 @@ module SeedData
 
       Game.create!({
         title: "Final Fantasy XV",
-        description: %{An open world action role-playing game where players take 
-          control of main protagonist Noctis Lucis Caelum during his journey across 
-          the world of Eos. While accompanied by his three companions Gladiolus, Ignis 
-          and Prompto, Noctis is the only character directly controlled by the player: 
-          he can navigate through simple movement, jump over small obstacles, sprint 
-          for a limited time, and perform context-based actions such as taking cover 
-          behind objects.},
+        description: "An open world action role-playing game where players take"\
+          "control of main protagonist Noctis Lucis Caelum during his journey across"\
+          "the world of Eos. While accompanied by his three companions Gladiolus, Ignis"\
+          "and Prompto, Noctis is the only character directly controlled by the player:"\
+          "he can navigate through simple movement, jump over small obstacles, sprint"\
+          "for a limited time, and perform context-based actions such as taking cover"\
+          "behind objects.",
         image1: "final_fantasy_xv.jpg",
         image2: "final_fantasy_xv_2.jpg",
         release_date: "29/11/2016",
@@ -28,11 +28,11 @@ module SeedData
       })
       Game.create!({
         title: "Rise of the Tomb Raider",
-        description: %{A third-person action-adventure game that features similar 
-          gameplay found in 2013's Tomb Raider. Players control Lara Croft through 
-          various environments, battling enemies, and completing puzzle platforming 
-          sections, while using improvised weapons and gadgets in order to progress 
-          through the story.},
+        description: "A third-person action-adventure game that features similar"\
+          "gameplay found in 2013's Tomb Raider. Players control Lara Croft through"\
+          "various environments, battling enemies, and completing puzzle platforming"\
+          "sections, while using improvised weapons and gadgets in order to progress"\
+          "through the story.",
         image1: "rise_of_the_tomb_raider.jpg",
         image2: "rise_of_the_tomb_raider_2.jpg",
         release_date: "13/11/2015",
@@ -41,11 +41,11 @@ module SeedData
       })
       Game.create!({
         title: "Journey",
-        description: %{In Journey, the player takes the role of a robed figure in a 
-          desert. After an introductory sequence, the player is shown the robed figure 
-          sitting in the sand, with a large mountain in the distance. The path towards 
-          this mountain, the ultimate destination of the game, is subdivided into 
-          several sections traveled through linearly.},
+        description: "In Journey, the player takes the role of a robed figure in a"\
+          "desert. After an introductory sequence, the player is shown the robed figure"\
+          "sitting in the sand, with a large mountain in the distance. The path towards"\
+          "this mountain, the ultimate destination of the game, is subdivided into"\
+          "several sections traveled through linearly.",
         image1: "journey.jpg",
         image2: "journey_2.jpg",
         release_date: "14/12/2012",
