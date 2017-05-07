@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   has_many :orders
+  has_many :user_games
+  has_many :games, through: :user_games
+  has_many :game_genres, through: :games
+  has_many :genres, through: :game_genres
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
