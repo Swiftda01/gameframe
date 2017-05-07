@@ -9,4 +9,3 @@ Feature: Search
       When they complete the "name_search" field with "Final Fantasy XV"
       And they click on "Submit"
     Then they should see "Final Fantasy XV"
-      # And the correct number of search results should be returned

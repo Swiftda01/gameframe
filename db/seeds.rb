@@ -4,14 +4,19 @@
 module SeedData
   def self.extended(object)
     object.instance_exec do
+      ActiveRecord::Base.connection.execute("
+        TRUNCATE game_genres;
+        TRUNCATE games CASCADE;
+        TRUNCATE genres CASCADE;
+      ")
 
+      # Users
       unless User.find_by(email: "admin@email.com")
         User.create(email: "admin@email.com", date_of_birth: "01/01/1980", password: "123456", password_confirmation: "123456", is_admin: true)
       end
 
-      Game.destroy_all
-
-      Game.create!({
+      # Games
+      final_fantasy_xv = Game.create!({
         title: "Final Fantasy XV",
         description: "An open world action role-playing game where players take"\
           "control of main protagonist Noctis Lucis Caelum during his journey across"\
@@ -26,7 +31,7 @@ module SeedData
         price: 40,
         players: 1
       })
-      Game.create!({
+      rise_of_the_tomb_raider = Game.create!({
         title: "Rise of the Tomb Raider",
         description: "A third-person action-adventure game that features similar"\
           "gameplay found in 2013's Tomb Raider. Players control Lara Croft through"\
@@ -39,7 +44,7 @@ module SeedData
         price: 30,
         players: 1
       })
-      Game.create!({
+      journey = Game.create!({
         title: "Journey",
         description: "In Journey, the player takes the role of a robed figure in a"\
           "desert. After an introductory sequence, the player is shown the robed figure"\
@@ -52,6 +57,18 @@ module SeedData
         price: 12,
         players: 1
       })
+
+    # Genres
+    action_genre = Genre.create(name: "Action")
+    role_playing_genre = Genre.create(name: "Role-playing")
+    adventure_genre = Genre.create(name: "Adventure")
+
+    # GameGenres
+    GameGenre.create(game_id: final_fantasy_xv.id, genre_id: action_genre.id)
+    GameGenre.create(game_id: final_fantasy_xv.id, genre_id: role_playing_genre.id)
+    GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: action_genre.id)
+    GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: adventure_genre.id)
+    GameGenre.create(game_id: journey.id, genre_id: adventure_genre.id)
     end
   end
 end
