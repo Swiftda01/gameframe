@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :orders, only: [:new, :create]
+    get '/orders/:id/summary' => 'orders#summary', as: 'order_summary'
   end
 
   devise_for :users, controllers: { registrations: 'users/registrations' }

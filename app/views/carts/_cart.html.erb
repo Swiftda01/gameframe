@@ -6,7 +6,7 @@
         <%= render (cart.cart_games) %>
         <tr>
           <td colspan="3" class="align-right">Total</td>
-          <td colspan="1"><%= number_to_currency(cart.total_price, :unit => "£") %></td>
+          <td colspan="1"><%= number_to_currency(total_price(cart.cart_games), :unit => "£") %></td>
           <td></td>
         </tr>
       </table>

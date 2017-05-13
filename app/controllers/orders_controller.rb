@@ -14,8 +14,13 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      redirect_to store_index_url, notice: "Your order has been placed - Thank you!"
+      redirect_to order_summary_path(@order)
+      # redirect_to store_index_url, notice: "Your order has been placed - Thank you!"
     end
+  end
+
+  def summary
+    @order = Order.find(params[:id])
   end
 
   private

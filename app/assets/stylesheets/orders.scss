@@ -1,3 +1,10 @@
+@import 'base';
+
 .orders {
   background-image: url(asset_path('/assets/retro_wallpaper'));
+  .well {
+    td {
+      padding: 10px 5px 10px 10px;
+    }
+  }
 }
