@@ -8,14 +8,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.add_items_from_cart(@cart)
-    @order.update(user_id: current_user.id)
-    if @order.save
+    order = Order.new(order_params)
+    order.add_items_from_cart(@cart)
+    order.update(user_id: current_user.id)
+    if order.save
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      redirect_to order_summary_path(@order)
-      # redirect_to store_index_url, notice: "Your order has been placed - Thank you!"
+      redirect_to order_summary_path(order), notice: "Your order has been placed - Thank you!"
     end
   end
 

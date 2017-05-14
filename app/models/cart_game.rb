@@ -1,6 +1,6 @@
 class CartGame < ApplicationRecord
   belongs_to :cart
-  belongs_to :game, optional: true
+  belongs_to :game
   belongs_to :order, optional: true
 
   def total_price

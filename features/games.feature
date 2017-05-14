@@ -54,12 +54,5 @@ Feature: Games
     When they complete the "game_price" field with "0"
       And they click on "Update Game"
     Then they should see "Price must be greater than or equal to 0.01"
-  
-  @selenium
-  Scenario: An admin deletes a game
-    Given they are signed in as an admin
-      And they have navigated to a game's edit page
-    When they click on "Delete Game"
-    Then the game should be deleted
 
 

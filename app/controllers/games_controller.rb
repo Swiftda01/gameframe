@@ -34,11 +34,6 @@ class GamesController < ApplicationController
     end
   end
 
-  def destroy
-    @game.destroy
-    redirect_to games_url, notice: "Game was successfully destroyed."
-  end
-
   private
 
   def set_game
