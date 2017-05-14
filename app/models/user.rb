@@ -1,9 +1,7 @@
 class User < ApplicationRecord
   has_many :orders
   has_many :cart_games, through: :orders
-  has_many :games, through: :cart_games
-  has_many :user_games
-  has_many :games, through: :user_games
+  has_many :games, -> { uniq }, through: :cart_games
   has_many :game_genres, through: :games
   has_many :genres, through: :game_genres
 
