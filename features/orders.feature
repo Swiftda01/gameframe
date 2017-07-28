@@ -17,6 +17,7 @@ Feature: Orders
       And they complete the "order_postcode" field with "T3 5TT"
       And they click on "Place Order"
     Then an order should be placed
+      And they should see "Order Summary"
 
   @selenium
   Scenario: An user attempts to place an order when their cart is empty

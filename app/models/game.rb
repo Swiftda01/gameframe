@@ -6,5 +6,4 @@ class Game < ApplicationRecord
   has_many :genres, through: :game_genres
 
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
-
 end

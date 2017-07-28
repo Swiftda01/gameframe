@@ -2,35 +2,35 @@
   <div class="col-md-12">
     <div class="well">
       <div>
-          <h2>Order Summary</h2>
+        <h2>Order Summary</h2>
 
-          <h3>Items Purchased:</h3>
-            <table>
-              <% @order.cart_games.each do |cart_game| %>
-                <tr>
-                  <td><%= cart_game.quantity %></td>
-                  <td>&times;</td>
-                  <td class="cart-game-title"><%= cart_game.game.title %></td>
-                  <td><%= number_to_currency((cart_game.game.price * cart_game.quantity), :unit => "£") %></td>
-                </tr>
-              <% end %>
+        <h3>Items Purchased:</h3>
+          <table>
+            <% @order.cart_games.each do |cart_game| %>
               <tr>
-                <td colspan="3" class="align-right">Total</td>
-                <td colspan="1"><%= number_to_currency(total_price(@order.cart_games), :unit => "£") %></td>
-                <td></td>
+                <td><%= cart_game.quantity %></td>
+                <td>&times;</td>
+                <td class="cart-game-title"><%= cart_game.game.title %></td>
+                <td><%= number_to_currency((cart_game.game.price * cart_game.quantity), :unit => "£") %></td>
               </tr>
-            </table>
-          </ul>
+            <% end %>
+            <tr>
+              <td colspan="3" class="align-right">Total</td>
+              <td colspan="1"><%= number_to_currency(total_price(@order.cart_games), :unit => "£") %></td>
+              <td></td>
+            </tr>
+          </table>
+        </ul>
 
-          <h3>Delivery Address:</h3>
-          <p><%= @order.first_name + " " + @order.last_name %></p>
-          <p><%= @order.address_line1 %></p>
-          <p><%= @order.address_line2 %></p>
-          <p><%= @order.address_line3 %></p>
-          <p><%= @order.town_city %></p>
-          <p><%= @order.county %></p>
-          <p><%= @order.postcode %></p>
-        </div>
+        <h3>Delivery Address:</h3>
+        <p><%= @order.first_name + " " + @order.last_name %></p>
+        <p><%= @order.address_line1 %></p>
+        <p><%= @order.address_line2 %></p>
+        <p><%= @order.address_line3 %></p>
+        <p><%= @order.town_city %></p>
+        <p><%= @order.county %></p>
+        <p><%= @order.postcode %></p>
+      </div>
     </div>
   </div>
 </div>
