@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514145925) do
+ActiveRecord::Schema.define(version: 20170803180406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170514145925) do
     t.boolean  "coop"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "listed"
   end
 
   create_table "genres", force: :cascade do |t|

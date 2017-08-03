@@ -15,6 +15,14 @@ When(/^they click on "([^"]*)"$/) do |element|
   click_on element
 end
 
+When(/^they "([^"]*)" the "([^"]*)" checkbox$/) do |ticked_or_unticked, field|
+  find(:css, "##{field}").set(ticked_or_unticked == "ticked" ? true : false)
+end
+
 Then(/^they should see "([^"]*)"$/) do |content|
   page.should have_content(content)
+end
+
+Then(/^they should not see "([^"]*)"$/) do |content|
+  page.should_not have_content(content)
 end

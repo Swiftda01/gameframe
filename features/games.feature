@@ -55,4 +55,13 @@ Feature: Games
       And they click on "Update Game"
     Then they should see "Price must be greater than or equal to 0.01"
 
+  @selenium
+  Scenario: An admin unlists a game
+    Given they are signed in as an admin
+      And they have navigated to a game's edit page
+    When they "untick" the "game_listed" checkbox
+      And they click on "Update Game"
+      And they have navigated to "/store/index"
+    Then they should not see "Final Fantasy XV"
+
 

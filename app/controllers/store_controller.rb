@@ -1,10 +1,10 @@
 class StoreController < ApplicationController
   def index
-    results = Game.where("title = '#{params[:name_search]}'")
-    if (results.count > 0)
-      @games = results.order("release_date DESC")
-    else
-      @games = Game.order("release_date DESC")
+    @games = Game.where(listed: true).order("release_date DESC")
+
+    if params[:name_search].present?
+      results = @games.where("title = ?", params[:name_search])
+      @games = results if results.count > 0
     end
   end
 end
