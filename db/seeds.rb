@@ -29,7 +29,8 @@ module SeedData
         image2: "final_fantasy_xv_2.jpg",
         release_date: "29/11/2016",
         price: 40,
-        players: 1
+        players: 1,
+        listed: true
       })
       rise_of_the_tomb_raider = Game.create!({
         title: "Rise of the Tomb Raider",
@@ -42,7 +43,8 @@ module SeedData
         image2: "rise_of_the_tomb_raider_2.jpg",
         release_date: "13/11/2015",
         price: 30,
-        players: 1
+        players: 1,
+        listed: true
       })
       journey = Game.create!({
         title: "Journey",
@@ -55,7 +57,8 @@ module SeedData
         image2: "journey_2.jpg",
         release_date: "14/12/2012",
         price: 12,
-        players: 1
+        players: 1,
+        listed: true
       })
 
     # Genres

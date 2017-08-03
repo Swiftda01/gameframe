@@ -62,6 +62,6 @@ Feature: Games
     When they "untick" the "game_listed" checkbox
       And they click on "Update Game"
       And they have navigated to "/store/index"
-    Then they should not see "Final Fantasy XV"
+    Then they should not see "Journey"
 
 
