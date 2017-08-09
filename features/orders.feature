@@ -18,6 +18,7 @@ Feature: Orders
       And they click on "Place Order"
     Then an order should be placed
       And they should see "Order Summary"
+      And the number of game units sold should increase appropriately
 
   @selenium
   Scenario: An user attempts to place an order when their cart is empty

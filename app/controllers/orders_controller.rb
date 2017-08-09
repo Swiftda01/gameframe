@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     order.add_items_from_cart(@cart)
     order.update(user_id: current_user.id)
     if order.save
+      order.add_to_units_sold
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
       redirect_to order_summary_path(order), notice: "Your order has been placed - Thank you!"

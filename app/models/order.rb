@@ -10,4 +10,12 @@ class Order < ApplicationRecord
       cart_games << item
     end
   end
+
+  def add_to_units_sold
+    self.cart_games.each do |item|
+      game = item.game
+      game.increment(:units_sold, by = item.quantity)
+      game.save
+    end
+  end
 end
