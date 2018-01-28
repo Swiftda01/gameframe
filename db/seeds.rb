@@ -12,8 +12,23 @@ module SeedData
 
       # Users
       unless User.find_by(email: "admin@email.com")
-        User.create(email: "admin@email.com", date_of_birth: "01/01/1980", password: "123456", password_confirmation: "123456", is_admin: true)
+        User.create(
+          email: "admin@email.com",
+          date_of_birth: "01/01/1980",
+          password: "123456",
+          password_confirmation: "123456",
+          is_admin: true,
+          first_name: "Test",
+          last_name: "Testerson",
+          address_line1: "1 Test Street",
+          address_line2: "Testing Hill",
+          address_line3: "Test Village",
+          town_city: "Test Town",
+          county: "Testshire",
+          postcode: "T1 1TT",
+        )
       end
+      user = User.find_by(email: "admin@email.com")
 
       # Games
       final_fantasy_xv = Game.create!({
@@ -61,17 +76,33 @@ module SeedData
         listed: true
       })
 
-    # Genres
-    action_genre = Genre.create(name: "Action")
-    role_playing_genre = Genre.create(name: "Role-playing")
-    adventure_genre = Genre.create(name: "Adventure")
+      # Genres
+      action_genre = Genre.create(name: "Action")
+      role_playing_genre = Genre.create(name: "Role-playing")
+      adventure_genre = Genre.create(name: "Adventure")
 
-    # GameGenres
-    GameGenre.create(game_id: final_fantasy_xv.id, genre_id: action_genre.id)
-    GameGenre.create(game_id: final_fantasy_xv.id, genre_id: role_playing_genre.id)
-    GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: action_genre.id)
-    GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: adventure_genre.id)
-    GameGenre.create(game_id: journey.id, genre_id: adventure_genre.id)
+      # GameGenres
+      GameGenre.create(game_id: final_fantasy_xv.id, genre_id: action_genre.id)
+      GameGenre.create(game_id: final_fantasy_xv.id, genre_id: role_playing_genre.id)
+      GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: action_genre.id)
+      GameGenre.create(game_id: rise_of_the_tomb_raider.id, genre_id: adventure_genre.id)
+      GameGenre.create(game_id: journey.id, genre_id: adventure_genre.id)
+
+      # Order
+      order = Order.create(
+        first_name: user.first_name,
+        last_name: user.last_name,
+        address_line1: user.address_line1,
+        address_line2: user.address_line2,
+        address_line3: user.address_line3,
+        town_city: user.town_city,
+        county: user.county,
+        postcode: user.postcode,
+        user_id: user.id
+      )
+
+      # Items in order
+      CartGame.create(game_id: final_fantasy_xv.id, order_id: order.id)
     end
   end
 end

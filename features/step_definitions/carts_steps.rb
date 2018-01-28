@@ -22,6 +22,7 @@ When(/^they click on the delete button$/) do
 end
 
 Then(/^that item should be added to their cart$/) do
+  sleep 3
   expect(Game.last.cart_games.count).to eq(1)
 end
 

@@ -1,0 +1,6 @@
+<tr class="game_listing">
+  <td><%= order.id %></td>
+  <td><%= order.first_name + " " + order.last_name %></td>
+  <td><%= order.address_line1 %>, <%= order.postcode %></td>
+  <td><%= order.created_at.strftime("%e %b %Y %H:%M:%S") %></td>
+</tr>

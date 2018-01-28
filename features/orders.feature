@@ -6,6 +6,13 @@ Feature: Orders
       And they have previously signed in
 
   @selenium
+  Scenario: An admin views a list of all orders
+    Given they are signed in as an admin
+      And they have navigated to "/orders"
+    Then they should see "Orders"
+      And they should see a table containing a list of orders
+
+  @selenium
   Scenario: A user places an order
     Given they have previously added a game to their cart
     When they click on "Proceed to Checkout"
