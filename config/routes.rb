@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :cart_games, only: [:show, :create, :destroy]
 
   authenticate :user do
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:index, :new, :create]
     get '/orders/:id/summary' => 'orders#summary', as: 'order_summary'
   end
 
